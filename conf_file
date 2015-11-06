@@ -1,0 +1,40 @@
+#! /bin/bash
+
+DATE=`date +%F-%T`
+#本地alligator code路径
+APPCODE_PATH=$HOME"/code/alligator"
+
+#需要拷贝的本地文件[war包]
+WAR_NAME="ROOT"
+SRC_FILE=$APPCODE_PATH"/alligator.web/target/"$WAR_NAME".war"
+
+#host机器的IP地址
+HOST_IP="10.165.6.179"
+#beta机器的ip地址
+BETA_IP="10.162.101.46"
+#服务的端口
+HOST_PORT=8090
+BETA_PORT=8090
+
+#双机发布中的主机，先上BETA机器，没有问题再上主机
+HOST_SERVER="tqmall.act@"$HOST_IP
+#beta发布的机器
+BETA_SERVER="tqmall.act@"$BETA_IP
+
+#NGINX所在的服务器
+NGINX_SERVER=$HOST_SERVER
+
+#nginx conf文件路径
+NGINX_CONF_FILE="/etc/nginx/nginx.conf"
+
+#服务器上tomcat安装路径，目前主机和BETA机器都是一样的
+TOMCAT_PATH="/data/act_server/tomcat/webapps"
+
+#执行reload nginx的脚本
+LOCAL_RELOAD_NGINX_FILE="handle_nginx_conf.sh"
+
+#执行kill tomcat 的脚本
+LOCAL_KILL_PROCESS_FILE="kill_process.sh"
+
+#部署的机器类型，single: 单机 double: 双机
+BUILD_TYPE='double'
