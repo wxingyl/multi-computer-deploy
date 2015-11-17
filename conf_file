@@ -9,17 +9,17 @@ WAR_NAME="ROOT"
 SRC_FILE=$APPCODE_PATH"/alligator.web/target/"$WAR_NAME".war"
 
 #host机器的IP地址
-HOST_IP="10.165.6.179"
+HOST_IP="192.168.0.1"
 #beta机器的ip地址
-BETA_IP="10.162.101.46"
+BETA_IP="192.168.0.2"
 #服务的端口
 HOST_PORT=8090
 BETA_PORT=8090
 
 #双机发布中的主机，先上BETA机器，没有问题再上主机
-HOST_SERVER="tqmall.act@"$HOST_IP
+HOST_SERVER="xxx@"$HOST_IP
 #beta发布的机器
-BETA_SERVER="tqmall.act@"$BETA_IP
+BETA_SERVER="xxx@"$BETA_IP
 
 #NGINX所在的服务器
 NGINX_SERVER=$HOST_SERVER
